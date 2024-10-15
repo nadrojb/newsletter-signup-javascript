@@ -3,25 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Document</title>
   </head>
-  <body>
-    <form>
-      <label for="email">Email address</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="email@company.com"
-      />
-      <input
-        type="submit"
-        name="submit"
-        id="submit"
-        value="Subscribe to monthly newsletter"
-      />
-    </form>
+  <body class="font-roboto bg-sky-950">
+    <section class="flex bg-white w-6/12 p-6 rounded-2xl mx-auto mt-20">
+      <div class="w-7/12 py-10 pl-7 pr-9">
+        <h1 class="font-sky-950 text-5xl font-semibold pb-4">Stay updated!</h1>
+        <h5 class="pb-4 text-sm font-sky-950">
+          Join 60,000+ product managers receiving monthly updates on:
+        </h5>
+        <ul class="pb-4">
+          <li class="pb-1 text-sm font-sky-950">
+            <i
+              class="fa-solid fa-circle-check fa-sm pr-2"
+              style="color: #ff6740"
+            ></i
+            >Product discovery and building what matters
+          </li>
+          <li class="pb-1 text-sm font-sky-950">
+            <i
+              class="fa-solid fa-circle-check fa-sm pr-2"
+              style="color: #ff6740"
+            ></i
+            >Measuring to ensure updates are a success
+          </li>
+          <li class="pb-1 text-sm font-sky-950">
+            <i
+              class="fa-solid fa-circle-check fa-sm pr-2"
+              style="color: #ff6740"
+            ></i
+            >And much More!
+          </li>
+        </ul>
+        <form>
+          <div class="pb-2">
+            <label class="text-xs font-semibold font-sky-950" for="email"
+              >Email address</label
+            >
+          </div>
+          <input
+            class="w-full border p-3 rounded-md text-sm mb-3 cursor-pointer hover:border-gray-500 hover:ease-in duration-150"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email@company.com"
+          />
+          <input
+            class="w-full text-sm bg-sky-950 border-2 border-sky-950 rounded-md text-white py-3 font-medium cursor-pointer hover:bg-white hover:text-sky-950 hover:font-medium hover:border-2 hover:border-sky-950 hover:ease-in duration-150"
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Subscribe to monthly newsletter"
+          />
+        </form>
+      </div>
+      <div class="w-5/12">
+        <img src="./img/illustration-sign-up-desktop.svg" alt="" />
+      </div>
+    </section>
   </body>
 </html>
