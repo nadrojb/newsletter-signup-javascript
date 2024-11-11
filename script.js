@@ -2,6 +2,8 @@
 
 let form = document.querySelector("form");
 let newsletterContainer = document.querySelector("#newsletter-container");
+const successMessage = document.querySelector("#success-message-container");
+const successContainerButton = document.querySelector("#dismiss-btn");
 
 function validateEmail(email) {
   const validReg =
@@ -29,6 +31,8 @@ function validateEmail(email) {
     setInterval(() => {
       newsletterContainer.classList.add("hidden");
     }, 400);
+    successMessage.classList.remove("hidden");
+    successMessage.classList.add("block");
   } else if (email == "" || !email.match(validReg)) {
     emailInput.classList.remove("border", "bg-slate-100");
     emailInput.classList.add("border-2", "border-red-600", "bg-red-200");
@@ -42,4 +46,12 @@ form.addEventListener("submit", (event) => {
   let userEmail = document.querySelector("#email").value;
   validateEmail(userEmail);
   console.log("email submitted");
+});
+
+successContainerButton.addEventListener("click", (event) => {
+  successMessage.classList.remove("block");
+  successMessage.classList.add("hidden");
+  newsletterContainer.classList.remove("hidden");
+  newsletterContainer.classList.add("block");
+  form.reset();
 });
