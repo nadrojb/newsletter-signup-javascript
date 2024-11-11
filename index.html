@@ -20,7 +20,10 @@
     <title>Document</title>
   </head>
   <body class="font-roboto bg-sky-950">
-    <section class="flex bg-white w-6/12 p-6 rounded-2xl mx-auto mt-20 hidden ">
+    <section
+      id="newsletter-container"
+      class="flex bg-white w-6/12 p-6 rounded-2xl mx-auto mt-20"
+    >
       <div class="w-7/12 py-10 pl-7 pr-9">
         <h1 class="font-sky-950 text-5xl font-semibold pb-4">Stay updated!</h1>
         <h5 class="pb-4 text-sm font-sky-950">
@@ -90,11 +93,27 @@
         <img src="./img/illustration-sign-up-desktop.svg" alt="" />
       </div>
     </section>
-    <div class="bg-white w-3/12 shadow-md mx-auto mt-32 rounded-xl p-8">
-      <i class="fa-solid fa-circle-check fa-sm pr-2 text-4xl mb-4" style="color: #ff6740"></i>
-      <h1 class="text-4xl w-11/12 font-bold mb-3 text-sky-950">Thanks for subscribing!</h1>
-      <p class="text-sm mb-5">A confirmation email has been sent to <span class="font-bold text-sky-950" id="user-email">jordanbrewer@gmail.com</span>. Please open it and click the button inside to confirm your subscription.</p>
-      <button id="dismiss-btn" class="w-full text-sm bg-sky-950 border-2 border-sky-950 rounded-md text-white py-3 font-medium cursor-pointer hover:bg-white hover:text-sky-950 hover:font-medium hover:border-2 hover:border-sky-950 hover:ease-in duration-200">Dismiss message</button>
+    <div id="success-message-container" class="bg-white w-3/12 shadow-md mx-auto mt-32 rounded-xl p-8 hidden">
+      <i
+        class="fa-solid fa-circle-check fa-sm pr-2 text-4xl mb-4"
+        style="color: #ff6740"
+      ></i>
+      <h1 class="text-4xl w-11/12 font-bold mb-3 text-sky-950">
+        Thanks for subscribing!
+      </h1>
+      <p class="text-sm mb-5">
+        A confirmation email has been sent to
+        <span class="font-bold text-sky-950" id="user-email"
+          >jordanbrewer@gmail.com</span
+        >. Please open it and click the button inside to confirm your
+        subscription.
+      </p>
+      <button
+        id="dismiss-btn"
+        class="w-full text-sm bg-sky-950 border-2 border-sky-950 rounded-md text-white py-3 font-medium cursor-pointer hover:bg-white hover:text-sky-950 hover:font-medium hover:border-2 hover:border-sky-950 hover:ease-in duration-200"
+      >
+        Dismiss message
+      </button>
     </div>
   </body>
 </html>

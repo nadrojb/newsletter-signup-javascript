@@ -1,6 +1,7 @@
 "use strict";
 
 let form = document.querySelector("form");
+let newsletterContainer = document.querySelector("#newsletter-container");
 
 function validateEmail(email) {
   const validReg =
@@ -25,6 +26,9 @@ function validateEmail(email) {
     emailInput.classList.add("border-2", "border-green-700");
     checkMark.classList.remove("hidden");
     checkMark.classList.add("inline-block");
+    setInterval(() => {
+      newsletterContainer.classList.add("hidden");
+    }, 400);
   } else if (email == "" || !email.match(validReg)) {
     emailInput.classList.remove("border", "bg-slate-100");
     emailInput.classList.add("border-2", "border-red-600", "bg-red-200");
