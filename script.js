@@ -13,6 +13,13 @@ function validateEmail(email) {
   const emailInput = document.querySelector(".email-input");
   const checkMark = document.querySelector(".check");
 
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let userEmail = document.querySelector("#email").value;
+    validateEmail(userEmail);
+    console.log("email submitted");
+  });
+
   emailInput.classList.add("border", "bg-slate-100");
   emailInput.classList.remove(
     "border-green-700",
@@ -24,20 +31,17 @@ function validateEmail(email) {
   warningMessage.classList.remove("block");
 
   if (email.match(validReg)) {
-    emailInput.classList.remove("border");
-    emailInput.classList.add("border-2", "border-green-700");
-    checkMark.classList.remove("hidden");
-    checkMark.classList.add("inline-block");
-    setInterval(() => {
-      newsletterContainer.classList.add("hidden");
-    }, 400);
+    newsletterContainer.classList.add("hidden");
+    newsletterContainer.classList.remove("block");
     successMessage.classList.remove("hidden");
     successMessage.classList.add("block");
+    return;
   } else if (email == "" || !email.match(validReg)) {
     emailInput.classList.remove("border", "bg-slate-100");
     emailInput.classList.add("border-2", "border-red-600", "bg-red-200");
     warningMessage.classList.remove("hidden");
     warningMessage.classList.add("block");
+    form.reset();
   }
 }
 
